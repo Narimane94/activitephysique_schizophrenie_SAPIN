@@ -14,22 +14,24 @@
       color: #333;
     }
 
-    .logo-header-container {
+    /* LOGOS EN TÊTE : 2 logos centrés l’un au-dessus de l’autre */
+    .logo-header-container.stacked-logos {
       background: white;
       padding: 1rem;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.75rem;
     }
 
-    .logo-header-container img {
-      max-height: 80px;
-      max-width: 100%;
+    .logo-header-container.stacked-logos img {
+      max-height: 60px;
+      max-width: 80%;
       height: auto;
+      width: auto;
     }
 
+    /* BANDEAU RESPONSIVE */
     .bandeau-container {
       width: 100%;
       padding: 0;
@@ -40,6 +42,7 @@
     .bandeau-image img {
       width: 100%;
       height: auto;
+      object-fit: cover;
       display: block;
     }
 
@@ -131,9 +134,11 @@
       padding: 2rem 1rem;
     }
 
+    /* MEDIA QUERIES POUR MOBILE */
     @media (max-width: 600px) {
-      .logo-header-container img {
-        max-height: 50px;
+      .logo-header-container.stacked-logos img {
+        max-height: 40px;
+        max-width: 90%;
       }
 
       .btn {
@@ -145,63 +150,67 @@
 </head>
 <body>
 
-  <div class="logo-header-container">
-    <img src="logos-header.png" alt="Logos des partenaires">
-  </div>
+<!-- 2 logos l’un au-dessus de l’autre -->
+<div class="logo-header-container stacked-logos">
+  <img src="logo-haut.png" alt="Logo du haut">
+  <img src="logo-bas.png" alt="Logo du bas">
+</div>
 
-  <div class="bandeau-container">
-    <div class="bandeau-image">
-      <img src="bandeau.jpg" alt="Illustration activité physique">
+<!-- Bandeau principal -->
+<div class="bandeau-container">
+  <div class="bandeau-image">
+    <img src="bandeau.jpg" alt="Illustration activité physique">
+  </div>
+</div>
+
+<!-- Titre principal -->
+<div class="title">
+  <h1>Vous avez entre <span class="highlight-text">18 et 55 ans</span> et souhaitez participer à une étude sur <span class="highlight-text">l'activité physique</span> et la <span class="highlight-text">schizophrénie</span> ?</h1>
+</div>
+
+<main>
+  <section>
+    <h2>Pourquoi cette étude ?</h2>
+    <p>Nous cherchons à comprendre si la pratique <strong>d'une activité physique en plein air</strong> a un impact plus important sur la santé mentale que la pratique en salle, notamment chez les personnes atteintes de schizophrénie.</p>
+  </section>
+
+  <section>
+    <h2>En quoi cela consiste ?</h2>
+    <ul>
+      <li>Programme de 8 semaines (2 séances/semaine)</li>
+      <li>3 groupes : salle, extérieur ou absence d'entraînement</li>
+      <li>4 visites : un entretien avec le médecin, une évaluation avant le programme, une à la fin, puis une dernière trois mois plus tard</li>
+    </ul>
+    <div class="highlight">
+      <strong>Aucun effort dangereux</strong><br>Tous les tests sont encadrés et adaptés à votre niveau.
     </div>
-  </div>
+  </section>
 
-  <div class="title">
-    <h1>Vous avez entre <span class="highlight-text">18 et 55 ans</span> et souhaitez participer à une étude sur <span class="highlight-text">l'activité physique</span> et la <span class="highlight-text">schizophrénie</span> ?</h1>
-  </div>
+  <section>
+    <h2>Quels bénéfices ?</h2>
+    <ul>
+      <li>Participer à de nouvelles avancées en santé mentale</li>
+      <li>Mieux comprendre l'impact de l'activité physique sur vos symptômes</li>
+      <li>Un bilan de vos évaluations de santé</li>
+      <li>Possibilité de bénéficier d'un programme gratuit après l'étude pour le groupe sans entrainement</li>
+    </ul>
+  </section>
 
-  <main>
-    <section>
-      <h2>Pourquoi cette étude ?</h2>
-      <p>Nous cherchons à comprendre si la pratique <strong>d'une activité physique en plein air</strong> a un impact plus important sur la santé mentale que la pratique en salle, notamment chez les personnes atteintes de schizophrénie.</p>
-    </section>
+  <section>
+    <h2>Comment participer ?</h2>
+    <p>Un premier contact permettra de vérifier que vous pouvez participer à l’étude. Vous passerez ensuite une visite médicale gratuite, avant qu’un tirage au sort puisse déterminer votre groupe</p>
+    <a class="btn" href="sms:+33699719849&body=Bonjour, votre étude sur l'activité physique et la schizophrénie m'intéresse.">
+      <i class="fas fa-phone"></i> En savoir plus par SMS
+    </a>
+    <a class="btn" href="mailto:narimane.zeghoudi@univ-st-etienne.fr?subject=Intérêt pour l'étude SAPIN&body=Bonjour, votre étude sur l'activité physique et la schizophrénie m'intéresse.">
+      <i class="fas fa-envelope"></i> En savoir plus par Email
+    </a>
+  </section>
+</main>
 
-    <section>
-      <h2>En quoi cela consiste ?</h2>
-      <ul>
-        <li>Programme de 8 semaines (2 séances/semaine)</li>
-        <li>3 groupes : salle, extérieur ou absence d'entraînement</li>
-        <li>4 visites : un entretien avec le médecin, une évaluation avant le programme, une à la fin, puis une dernière trois mois plus tard</li>
-      </ul>
-      <div class="highlight">
-        <strong>Aucun effort dangereux</strong><br>Tous les tests sont encadrés et adaptés à votre niveau.
-      </div>
-    </section>
-
-    <section>
-      <h2>Quels bénéfices ?</h2>
-      <ul>
-        <li>Participer à de nouvelles avancées en santé mentale</li>
-        <li>Mieux comprendre l'impact de l'activité physique sur vos symptômes</li>
-        <li>Un bilan de vos évaluations de santé</li>
-        <li>Possibilité de bénéficier d'un programme gratuit après l'étude pour le groupe sans entrainement</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Comment participer ?</h2>
-      <p>Un premier contact permettra de vérifier que vous pouvez participer à l’étude. Vous passerez ensuite une visite médicale gratuite, avant qu’un tirage au sort puisse déterminer votre groupe</p>
-      <a class="btn" href="sms:+33699719849&body=Bonjour, votre étude sur l'activité physique et la schizophrénie m'intéresse.">
-        <i class="fas fa-phone"></i> En savoir plus par SMS
-      </a>
-      <a class="btn" href="mailto:narimane.zeghoudi@univ-st-etienne.fr?subject=Intérêt pour l'étude SAPIN&body=Bonjour, votre étude sur l'activité physique et la schizophrénie m'intéresse.">
-        <i class="fas fa-envelope"></i> En savoir plus par Email
-      </a>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 UJM Saint-Étienne & LIBM – Tous droits réservés.
-  </footer>
+<footer>
+  &copy; 2025 UJM Saint-Étienne & LIBM – Tous droits réservés.
+</footer>
 
 </body>
 </html>
