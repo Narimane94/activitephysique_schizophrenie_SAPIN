@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Participez à une étude sur l'activité physique</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -107,24 +107,41 @@
       vertical-align: middle;
     }
 
+    /* CONTENEUR BOUTONS "EN SAVOIR PLUS" */
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: nowrap;
+    }
+
+    /* BOUTONS EN SAVOIR PLUS */
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: #00796b;
       color: #fff;
-      padding: 0.75rem 1.5rem;
+      padding: 0 1.5rem;
       border: none;
       border-radius: 4px;
       text-decoration: none;
       font-size: 1rem;
-      margin: 0.5rem;
-    }
-
-    .btn:hover {
-      background: #005f54;
+      margin: 0;
+      height: 60px;           /* hauteur égale aux logos */
+      min-width: 160px;       /* largeur min pour garder une bonne taille */
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.3s ease;
     }
 
     .btn i {
       margin-right: 0.5rem;
+    }
+
+    .btn:hover {
+      background: #005f54;
     }
 
     footer {
@@ -141,76 +158,110 @@
         max-width: 90%;
       }
 
+      /* Sur mobile, empiler verticalement les boutons, centrés */
+      .btn-group {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
       .btn {
-        width: 100%;
-        text-align: center;
+        width: 80%;
+        max-width: 300px;
+        height: 50px;
+        font-size: 0.95rem;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- 2 logos l’un au-dessus de l’autre -->
-<div class="logo-header-container stacked-logos">
-  <img src="logo-haut.png" alt="Logo du haut">
-  <img src="logo-bas.png" alt="Logo du bas">
-</div>
-
-<!-- Bandeau principal -->
-<div class="bandeau-container">
-  <div class="bandeau-image">
-    <img src="bandeau.jpg" alt="Illustration activité physique">
+  <!-- 2 logos l’un au-dessus de l’autre -->
+  <div class="logo-header-container stacked-logos">
+    <img src="logo-haut.png" alt="Logo du haut" />
+    <img src="logo-bas.png" alt="Logo du bas" />
   </div>
-</div>
 
-<!-- Titre principal -->
-<div class="title">
-  <h1>Vous avez entre <span class="highlight-text">18 et 55 ans</span> et souhaitez participer à une étude sur <span class="highlight-text">l'activité physique</span> et la <span class="highlight-text">schizophrénie</span> ?</h1>
-</div>
-
-<main>
-  <section>
-    <h2>Pourquoi cette étude ?</h2>
-    <p>Nous cherchons à comprendre si la pratique <strong>d'une activité physique en plein air</strong> a un impact plus important sur la santé mentale que la pratique en salle, notamment chez les personnes atteintes de schizophrénie.</p>
-  </section>
-
-  <section>
-    <h2>En quoi cela consiste ?</h2>
-    <ul>
-      <li>Programme de 8 semaines (2 séances/semaine)</li>
-      <li>3 groupes : salle, extérieur ou absence d'entraînement</li>
-      <li>4 visites : un entretien avec le médecin, une évaluation avant le programme, une à la fin, puis une dernière trois mois plus tard</li>
-    </ul>
-    <div class="highlight">
-      <strong>Aucun effort dangereux</strong><br>Tous les tests sont encadrés et adaptés à votre niveau.
+  <!-- Bandeau principal -->
+  <div class="bandeau-container">
+    <div class="bandeau-image">
+      <img src="bandeau.jpg" alt="Illustration activité physique" />
     </div>
-  </section>
+  </div>
 
-  <section>
-    <h2>Quels bénéfices ?</h2>
-    <ul>
-      <li>Participer à de nouvelles avancées en santé mentale</li>
-      <li>Mieux comprendre l'impact de l'activité physique sur vos symptômes</li>
-      <li>Un bilan de vos évaluations de santé</li>
-      <li>Possibilité de bénéficier d'un programme gratuit après l'étude pour le groupe sans entrainement</li>
-    </ul>
-  </section>
+  <!-- Titre principal -->
+  <div class="title">
+    <h1>
+      Vous avez entre
+      <span class="highlight-text">18 et 55 ans</span> et souhaitez participer à une
+      étude sur <span class="highlight-text">l'activité physique</span> et la
+      <span class="highlight-text">schizophrénie</span> ?
+    </h1>
+  </div>
 
-  <section>
-    <h2>Comment participer ?</h2>
-    <p>Un premier contact permettra de vérifier que vous pouvez participer à l’étude. Vous passerez ensuite une visite médicale gratuite, avant qu’un tirage au sort puisse déterminer votre groupe</p>
-    <a class="btn" href="sms:+33699719849&body=Bonjour, votre étude sur l'activité physique et la schizophrénie m'intéresse.">
-      <i class="fas fa-phone"></i> En savoir plus par SMS
-    </a>
-    <a class="btn" href="mailto:narimane.zeghoudi@univ-st-etienne.fr?subject=Intérêt pour l'étude SAPIN&body=Bonjour, votre étude sur l'activité physique et la schizophrénie m'intéresse.">
-      <i class="fas fa-envelope"></i> En savoir plus par Email
-    </a>
-  </section>
-</main>
+  <main>
+    <section>
+      <h2>Pourquoi cette étude ?</h2>
+      <p>
+        Nous cherchons à comprendre si la pratique <strong>d'une activité physique en plein air</strong>
+        a un impact plus important sur la santé mentale que la pratique en salle,
+        notamment chez les personnes atteintes de schizophrénie.
+      </p>
+    </section>
 
-<footer>
-  &copy; 2025 UJM Saint-Étienne & LIBM – Tous droits réservés.
-</footer>
+    <section>
+      <h2>En quoi cela consiste ?</h2>
+      <ul>
+        <li>Programme de 8 semaines (2 séances/semaine)</li>
+        <li>3 groupes : salle, extérieur ou absence d'entraînement</li>
+        <li>
+          4 visites : un entretien avec le médecin, une évaluation avant le programme,
+          une à la fin, puis une dernière trois mois plus tard
+        </li>
+      </ul>
+      <div class="highlight">
+        <strong>Aucun effort dangereux</strong><br />Tous les tests sont encadrés et adaptés à votre niveau.
+      </div>
+    </section>
 
+    <section>
+      <h2>Quels bénéfices ?</h2>
+      <ul>
+        <li>Participer à de nouvelles avancées en santé mentale</li>
+        <li>Mieux comprendre l'impact de l'activité physique sur vos symptômes</li>
+        <li>Un bilan de vos évaluations de santé</li>
+        <li>
+          Possibilité de bénéficier d'un programme gratuit après l'étude pour le groupe sans entrainement
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Comment participer ?</h2>
+      <p>
+        Un premier contact permettra de vérifier que vous pouvez participer à l’étude.
+        Vous passerez ensuite une visite médicale gratuite, avant qu’un tirage au sort
+        puisse déterminer votre groupe
+      </p>
+
+      <!-- Conteneur bouton modifié -->
+      <div class="btn-group">
+        <a
+          class="btn"
+          href="sms:+33699719849&body=Bonjour, votre étude sur l'activité physique et la schizophrénie m'intéresse."
+          ><i class="fas fa-phone"></i> En savoir plus par SMS</a
+        >
+        <a
+          class="btn"
+          href="mailto:narimane.zeghoudi@univ-st-etienne.fr?subject=Intérêt pour l'étude SAPIN&body=Bonjour, votre étude sur l'activité physique et la schizophrénie m'intéresse."
+          ><i class="fas fa-envelope"></i> En savoir plus par Email</a
+        >
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 UJM Saint-Étienne & LIBM – Tous droits réservés.
+  </footer>
 </body>
 </html>
