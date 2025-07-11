@@ -265,7 +265,7 @@
         var encodedMessage = encodeURIComponent(message);
 
         // Création de l'URL pour envoyer le SMS
-        var smsUrl = "sms:" + phoneNumber + "?body=" + encodedMessage;
+        var smsUrl = "smsto:" + phoneNumber + "?body=" + encodedMessage;
 
         // Ouverture de l'application de SMS
         window.location.href = smsUrl;
