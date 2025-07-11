@@ -192,9 +192,7 @@
   <!-- Titre principal -->
   <div class="title">
     <h1>
-      Vous avez entre
-      <span class="highlight-text">18 et 55 ans</span> et souhaitez participer à une
-      étude sur <span class="highlight-text">l'activité physique</span> et la
+      Vous souhaitez participer à une étude sur <span class="highlight-text">l'activité physique</span> et la
       <span class="highlight-text">schizophrénie</span> ?
     </h1>
   </div>
@@ -220,7 +218,7 @@
         </li>
       </ul>
       <div class="highlight">
-        <strong>Aucun effort dangereux</strong><br />Tous les tests sont encadrés et adaptés à votre niveau.
+        <strong>Aucun effort difficile</strong><br />Tous les tests sont encadrés et adaptés à votre niveau.
       </div>
     </section>
 
@@ -265,7 +263,7 @@
         var encodedMessage = encodeURIComponent(message);
 
         // Création de l'URL pour envoyer le SMS
-        var smsUrl = "smsto:" + phoneNumber + "?body=" + encodedMessage;
+        var smsUrl = "sms:" + phoneNumber + "?body=" + encodedMessage;
 
         // Ouverture de l'application de SMS
         window.location.href = smsUrl;
